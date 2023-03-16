@@ -45,6 +45,7 @@ class studentGrades
                 entryNumber--;
             }
         }
+    }
 
      static void Main() // running main loops
     {
