@@ -18,10 +18,38 @@ class studentGrades
         Console.WriteLine("   and provide a results summary");
         Console.WriteLine("-----------------------------------");
     }
+    
+    static void CalculateGrades()
+    {
+        Console.WriteLine("");
+        Console.WriteLine("Enter marks for 10 students:");
+        Console.WriteLine("");
 
-     static void Main()
+        // Variable Declaration & List Creation
+        List<string> studentNames = new List<string>();
+        List<int> studentMarks = new List<int>();
+
+        // Loop to take all grades from teacher (user)
+        for (int entryNumber = 1; entryNumber <= 10; entryNumber++)
+        {
+            Console.Write("Enter mark for student {0}: ", entryNumber);
+            int mark;
+            // Parse to check the right data type has been entered
+            if (int.TryParse(Console.ReadLine(), out mark))
+            {
+                studentMarks.Add(mark);
+            }
+            else
+            {
+                Console.WriteLine("Incorrect input. Please enter a number.");
+                entryNumber--;
+            }
+        }
+
+     static void Main() // running main loops
     {
          ApplicationHeading();
+         CalculateGrades()
     }
 }
 
